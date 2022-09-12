@@ -58,12 +58,10 @@ def encoding():
                     while spec_char in enc_alp.values():
                         spec_char = list(enc_alp)[random.randint(0, 98)] + list(enc_alp)[random.randint(0, 98)]
                     enc_alp[word] = '~' + spec_char
-                    encoded_file.write(enc_alp[word])
-                    encoded_file.write(enc_alp[' '])
+                    encoded_file.write(enc_alp[word] and enc_alp[' '])
                     word = ''
                 else:
-                    encoded_file.write(enc_alp[word])
-                    encoded_file.write(enc_alp[' '])
+                    encoded_file.write(enc_alp[word] and enc_alp[' '])
                     word = ''
 
             else:
